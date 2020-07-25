@@ -1,11 +1,9 @@
 package pixel;
 
-import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
@@ -170,7 +168,6 @@ public class Controller {
             marker.setOnMouseReleased(event -> {
                 point.setX((int) event.getX());
                 point.setY((int) event.getY());
-                System.out.println(point.toString());
                 updateList();
                 updateImageGrid();
                 event.consume();
@@ -181,18 +178,16 @@ public class Controller {
 
     private void updateList() {
         list.getChildren().clear();
-        for (Point p : pointList) {
-            list.getChildren().add(newListEntry(p));
-        }
+        pointList.forEach(a -> list.getChildren().add(newListEntry(a)));
     }
 
     private void updateImageGrid() {
-        for (Group g : groupList) {
-            for (Point p : pointList) {
-                g.getChildren().clear();
+        groupList.forEach(g -> {
+            g.getChildren().clear();
+            pointList.forEach(p -> {
                 drawMarker(p, groupList);
-            }
-        }
+            });
+        });
     }
 }
 
