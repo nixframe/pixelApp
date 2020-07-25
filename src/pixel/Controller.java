@@ -126,7 +126,7 @@ public class Controller {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode() == KeyCode.ENTER) {
-                    if (xPosField.getText().matches("^[0-9]$")) {
+                    if (xPosField.getText().matches("^[0-9]*$")) {
                         point.setX(Integer.parseInt(xPosField.getText()));
                         updateImageGrid();
                     } else {
@@ -142,7 +142,7 @@ public class Controller {
             @Override
             public void handle(KeyEvent keyEvent) {
                 if (keyEvent.getCode() == KeyCode.ENTER) {
-                    if (xPosField.getText().matches("^[0-9]$")) {
+                    if (yPosField.getText().matches("^[0-9]*$")) {
                         point.setY(Integer.parseInt(yPosField.getText()));
                         updateImageGrid();
                     } else {
