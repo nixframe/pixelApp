@@ -1,4 +1,34 @@
-<?import javafx.scene.layout.GridPane?>
-<GridPane fx:controller="pixel.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<HBox fx:controller="pixel.Controller" xmlns:fx="http://javafx.com/fxml">
+    <VBox fx:id="list" prefWidth="200"></VBox>
+    <GridPane fx:id="imageGrid" prefWidth="500">
+        <children>
+            <Group GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <children>
+                    <ImageView fx:id="img0" onMouseClicked="#imageClicked"></ImageView>
+                    <Group fx:id="g0"></Group>
+                </children>
+            </Group>
+            <Group GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <children>
+                    <ImageView fx:id="img1" onMouseClicked="#imageClicked"></ImageView>
+                    <Group fx:id="g1"></Group>
+                </children>
+            </Group>
+            <Group GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <children>
+                    <ImageView fx:id="img2" onMouseClicked="#imageClicked"></ImageView>
+                    <Group fx:id="g2"></Group>
+                </children>
+            </Group>
+            <Group GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <children>
+                    <ImageView fx:id="img3" onMouseClicked="#imageClicked"></ImageView>
+                    <Group fx:id="g3"></Group>
+                </children>
+            </Group>
+        </children>
+    </GridPane>
+</HBox>
